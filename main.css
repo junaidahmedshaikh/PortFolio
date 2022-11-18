@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 10px;
+
 }
 
 @font-face {
@@ -21,6 +22,7 @@
     --color1: #fefaf6;
     --box-color: #dbdbdb3d;
     --secondary-color: #939393;
+    --transition:all 1s;
 }
 /* .dark-theme{
     --primary-color: #c7c7c9;
