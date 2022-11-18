@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-size: 10px;
-
 }
 
 @font-face {
@@ -22,14 +21,13 @@
     --color1: #fefaf6;
     --box-color: #dbdbdb3d;
     --secondary-color: #939393;
-    --transition:all 1s;
 }
-/* .dark-theme{
+.dark-theme{
     --primary-color: #c7c7c9;
     --light-grey: #dbdbdb;
     --box-color: #292931;
     background-color: #0c0c0c;
-} */
+}
 body {
     font-family: "Lato", sans-serif;
     font-weight: 400;
@@ -57,33 +55,82 @@ body {
     text-align: center;
 }
 .main-heading-box img{
-    height: 100px;
+    height: 6rem;
+    animation-name: moveInUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-out
 }
 .main-heading-box h1 strong {
     font-size: 6rem;
     font-family: 'Bebas Neue', cursive;
     color: var(--primary-color);
     /* display: block; */
+    transition: all .2s;
     font-weight: normal;
     letter-spacing: 0.03em;
+    display: inline-block;
+    animation-name: moveInLeft;
+    animation-duration: 1s;
+    animation-timing-function: ease-out
 }
-
+.about-container h3{
+    display: inline-block;
+    transition: all .2s;
+}
+.main-heading-box h1 strong:hover, .about-container h3:hover{
+    color: #CCCCCC;
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 40%);
+    transform: rotate(5deg);
+}
 .main-heading-box span {
     color: var(--secondary-color);
     font-size: 3.5rem;
     line-height: 1rem;
     letter-spacing: 0.5rem;
     font-weight: bold;
+    display: block;
+    animation: moveInUp 1s ease-out
+}
+
+/* Animation  */
+
+
+@keyframes moveInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(10rem)
+    }
+
+    80% {
+        transform: translateY(1rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0)
+    }
+}
+@keyframes moveInBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(3rem)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0)
+    }
 }
 
 .sun-title {
-    transform: all .3s;
+    animation: moveInRight 1s ease-out
 }
 
 
 .social-media-box {
     position: absolute;
     top: 75%;
+    left: 2%;
     display: grid;
 }
 
@@ -106,13 +153,17 @@ body {
     margin: 1rem 0;
     font-size: 2rem;
     color: gray;
+    transition: all .5s;
 }
-.nav_bar i:hover {
+.nav_bar i, .social-media-box i {
+    animation: moveInBottom .5s ease-out .75s;
+    animation-fill-mode: backwards;
+}
+.nav_bar i:hover , .social-media-box i:hover, .footer-col-1 i:hover {
     color: rgb(220, 220, 220)!important ;
+    transform: translateY(-3px);
 }
-.social-media-box i:hover{
-    color: rgb(220, 220, 220)!important ;
-}
+
 .about-container {
     /* border: 2px solid rebeccapurple; */
     height: 70vh;
@@ -148,6 +199,7 @@ body {
 }
 
 .work-project-box a {
+    display: block;
     border-radius: 1rem;
     background-color: var(--box-color);
     text-decoration: none;
@@ -156,7 +208,11 @@ body {
     display: none;
 }
 .work-project-box a:hover{
-    filter: blur(1px);
+    /* filter: blur(1px);
+    transition: all .5s; */
+    color: #CCCCCC;
+    box-shadow: 0 1rem 2rem rgb(0 0 0 / 40%);
+    transform: rotate(5deg);
     transition: all .5s;
 }
 .work-project-box span:hover{
@@ -217,15 +273,14 @@ body {
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-    padding-top: 5rem;
+    padding-top: 3rem;
     height: auto;
     line-height: 5rem;
 }
 
 .footer-main-logo {
-    font-size: 2rem;
+    height: 3rem;
 }
-
 .footer-col-1 {
     display: flex;
     flex-direction: column;
@@ -242,9 +297,9 @@ body {
     font-size: 2.6rem;
     color: var(--primary-color);
 }
-.footer-col-1 i:hover{
+/* {
     color: rgb(99, 99, 99)!important ;
-}
+} */
 .media ul li {
     list-style: none;
 }
@@ -257,7 +312,6 @@ body {
     body {
         padding: 0 2rem;
     }
-
     .primary-header {
         font-size: 8rem;
     }
@@ -320,7 +374,9 @@ body {
     .main-heading-box h1 strong {
         font-size: 4rem;
     }
-
+    .main-heading-box img {
+        height: 4rem;
+    }
     .main-heading-box span {
         font-size: 2rem;
         letter-spacing: 0.4rem;
@@ -396,7 +452,9 @@ body {
     body {
         padding: 0;
     }
-
+    .main-heading-box img {
+        height: 3rem;
+    }
     .main-heading-box h1 strong {
         font-size: 3rem;
     }
